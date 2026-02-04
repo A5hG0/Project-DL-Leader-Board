@@ -9,3 +9,7 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
+
+// mongoose.connection.once("open", () => {
+//   console.log("DB:", mongoose.connection.name);
+// });

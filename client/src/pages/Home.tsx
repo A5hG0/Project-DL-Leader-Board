@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import { Link } from "react-router-dom";
 import type { CaseStudy } from "../types/casestudy";
+import "./Home.css";
 
 export default function Home() {
   const [cases, setCases] = useState<CaseStudy[]>([]);
@@ -11,15 +12,32 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>HOME</h1>
-      {cases.map((c) => (
-        <div key={c._id}>
-          <Link to={`/case/${c._id}`}>
-            <h3>{c.title}</h3>
-          </Link>
+    <div className="home">
+
+      {/* Hero Section */}
+      <section className="hero">
+        <h1>TAB Deep Learning</h1>
+        <p>
+          Real-world Deep Learning Case Studies, Projects and Concepts for learners.
+        </p>
+      </section>
+
+      {/* Case Studies */}
+      <section className="cases">
+        <h2>Case Studies</h2>
+
+        <div className="case-grid">
+          {cases.map((c) => (
+            <div className="case-card" key={c._id}>
+              <h3>{c.title}</h3>
+              <Link to={`/case/${c._id}`} className="btn">
+                Explore →
+              </Link>
+            </div>
+          ))}
         </div>
-      ))}
+      </section>
+
     </div>
   );
 }

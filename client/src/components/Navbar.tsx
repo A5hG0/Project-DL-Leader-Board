@@ -1,35 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar() {
-  return (
-    <nav style={styles.nav}>
-      <h2 style={styles.logo}>TAB DEEP LEARNING</h2>
+  const { pathname } = useLocation();
 
-      <div style={styles.links}>
-        <Link to="/">Home</Link>
-        <Link to="/leaderboard">Leaderboard</Link>
-        <Link to="/add">Add Case</Link>
+  return (
+    <nav className="nav">
+      <Link to="/" className="logo">Deep Learning</Link>
+
+      <div className="links">
+        <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
+        <Link className={pathname === "/leaderboard" ? "active" : ""} to="/leaderboard">Leaderboard</Link>
+        <Link className={pathname === "/add" ? "active" : ""} to="/add">Case Studies</Link>
       </div>
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px 40px",
-    borderBottom: "1px solid #7f0202",
-    position: "sticky" as const,
-    top: 0,
-    background: "white",
-  },
-  logo: {
-    margin: 0,
-  },
-  links: {
-    display: "flex",
-    gap: "20px",
-  },
-};

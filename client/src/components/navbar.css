@@ -1,0 +1,66 @@
+/* Navbar container */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(15, 23, 42, 0.7); /* glass */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logo */
+.logo {
+  text-decoration: none;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 28px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 15px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover underline animation */
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s ease;
+}
+
+.links a:hover {
+  color: #38bdf8;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.links .active {
+  color: #38bdf8;
+}
+
+.links .active::after {
+  width: 100%;
+}

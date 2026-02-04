@@ -1,9 +1,10 @@
-export interface CaseStudy {
+export interface Case {
   _id: string;
   title: string;
-  overview: string;
-  datasetInfo: string;
-  tasks: string[];
-  expectedOutcome: string;
-  difficulty: string;
+  subtitle: string;
+  problem: string;
+  approach: string;
+  implementation: string;
+  results: string;
+  learnings: string;
 }
