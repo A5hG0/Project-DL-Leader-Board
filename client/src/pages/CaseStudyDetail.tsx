@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios";
-import type { CaseStudy } from "../types/casestudy";
+import type { Case } from "../types/CaseStudy";
 
 export default function CaseStudies() {
-  const [cases, setCases] = useState<CaseStudy[]>([]);
+  const [cases, setCases] = useState<Case[]>([]);
 
   useEffect(() => {
-    api.get<CaseStudy[]>("/cases").then((res) => setCases(res.data));
+    api.get<Case[]>("/cases").then((res) => setCases(res.data));
   }, []);
 
   return (

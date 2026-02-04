@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios";
 import { Link } from "react-router-dom";
-import type { CaseStudy } from "../types/casestudy";
-import "./Home.css";
+import type { Case } from "../types/CaseStudy";
+import "../styles/Home.css";
 
 export default function Home() {
-  const [cases, setCases] = useState<CaseStudy[]>([]);
+  const [cases, setCases] = useState<Case[]>([]);
 
   useEffect(() => {
     api.get("/cases").then((res) => setCases(res.data));
