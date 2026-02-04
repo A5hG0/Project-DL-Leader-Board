@@ -1,16 +1,19 @@
 import dotenv from "dotenv";
 dotenv.config();
+
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
+import { connectDB } from "./config/db";
+import caseRoutes from "./routes/caseRoutes";
+import userRoutes from "./routes/userRoutes";
 
 const app = express();
+connectDB();
+
 app.use(cors());
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI as string)
-  .then(() => console.log("DB Connected"))
-  .catch((err) => console.log(err));
+app.use("/cases", caseRoutes);
+app.use("/users", userRoutes);
 
-app.listen(5000, () => console.log("Server running"));
+app.listen(5000, () => console.log("🚀 Server running on 5000"));
