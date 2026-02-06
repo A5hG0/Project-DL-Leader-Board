@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="links">
         <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
         <Link className={pathname === "/leaderboard" ? "active" : ""} to="/leaderboard">Leaderboard</Link>
-        <Link className={pathname === "/add" ? "active" : ""} to="/add">Case Studies</Link>
+        <Link className={pathname === "/cases" ? "active" : ""} to="/cases">Case Studies</Link>
       </div>
     </nav>
   );

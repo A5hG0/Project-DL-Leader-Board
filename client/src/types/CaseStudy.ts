@@ -7,4 +7,5 @@ export interface Case {
   implementation: string;
   results: string;
   learnings: string;
+  category: string;
 }

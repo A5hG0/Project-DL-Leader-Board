@@ -3,7 +3,7 @@ import "../styles/leaderboard.css";
 
 export default function Leaderboard() {
   const [users, setUsers] = useState<any[]>([]);
-
+  // This should not be outside !!!!!!!!!!!!!!!!!!!!
   useEffect(() => {
     fetch("https://script.google.com/macros/s/AKfycbzbsa_8EII2eNXtfl_UGrmqhoFi74wkJ7ROWwQ9dveY3xmmRaGiq5XeJSY1QFEC6han/exec")
       .then(res => res.json())

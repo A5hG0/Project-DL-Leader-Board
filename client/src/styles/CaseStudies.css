@@ -1,0 +1,198 @@
+/* ========== PAGE (match Home) ========== */
+.page {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.page-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ========== TITLE ========== */
+.page-title {
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 70px;
+  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== ACCORDION (CENTERED) ========== */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ========== HEADER CARD ========== */
+.accordion-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+
+  padding: 28px 32px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* neon left strip */
+.accordion-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  border-radius: 18px 0 0 18px;
+}
+
+/* left content */
+.accordion-header .left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.accordion-header .icon {
+  font-size: 26px;
+}
+
+.accordion-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* lesson pill */
+.pill {
+  background: rgba(255,255,255,0.12);
+  color: #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* hover glow */
+.accordion-header:hover {
+  transform: translateY(-6px);
+}
+
+/* ========== NEON COLOR VARIANTS ========== */
+.accordion-header.blue::before {
+  background: #38bdf8;
+}
+.accordion-header.blue:hover {
+  box-shadow: 0 12px 35px rgba(56,189,248,0.25);
+}
+
+.accordion-header.pink::before {
+  background: #f472b6;
+}
+.accordion-header.pink:hover {
+  box-shadow: 0 12px 35px rgba(244,114,182,0.25);
+}
+
+.accordion-header.cyan::before {
+  background: #22d3ee;
+}
+.accordion-header.cyan:hover {
+  box-shadow: 0 12px 35px rgba(34,211,238,0.25);
+}
+
+.accordion-header.green::before {
+  background: #4ade80;
+}
+.accordion-header.green:hover {
+  box-shadow: 0 12px 35px rgba(74,222,128,0.25);
+}
+
+.accordion-header.purple::before {
+  background: #a78bfa;
+}
+.accordion-header.purple:hover {
+  box-shadow: 0 12px 35px rgba(167,139,250,0.25);
+}
+
+/* ========== EXPANDED CONTENT ========== */
+.accordion-content {
+  margin-top: 18px;
+  padding: 28px;
+
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ========== LESSON ITEM ========== */
+.lesson-card {
+  display: flex;
+  gap: 18px;
+  padding: 18px 20px;
+
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.lesson-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #0f172a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.lesson-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.lesson-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 42px;
+  }
+
+  .accordion {
+    max-width: 100%;
+  }
+
+  .accordion-header {
+    padding: 22px;
+  }
+}
