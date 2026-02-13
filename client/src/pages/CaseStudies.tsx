@@ -19,16 +19,10 @@ export default function CaseStudies() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get<Case[]>("/cases").then((res) => setCases(res.data));
+    api.get<Case[]>("/cases")
+      .then((res) => setCases(res.data))
+      .catch((err) => console.error("Error fetching cases:", err));
   }, []);
-
-  /* -------- Dynamic Lesson Count -------- */
-  const getLessonCount = (category: string) =>
-    cases.filter(
-      (c) =>
-        c.category &&
-        c.category.toLowerCase() === category.toLowerCase()
-    ).length;
 
   return (
     <div className="case-page">
@@ -39,9 +33,15 @@ export default function CaseStudies() {
           {categories.map((cat) => {
             const isOpen = expandedCategory === cat.name;
 
+            const filteredCases = cases.filter(
+              (c) =>
+                c.category &&
+                c.category.toLowerCase().trim() ===
+                  cat.name.toLowerCase().trim()
+            );
+
             return (
               <div key={cat.name} className="accordion-item">
-                {/* -------- HEADER -------- */}
                 <button
                   className={`accordion-header ${cat.color}`}
                   onClick={() =>
@@ -54,21 +54,14 @@ export default function CaseStudies() {
                   </div>
 
                   <span className="pill">
-                    {getLessonCount(cat.name)} lessons
+                    {filteredCases.length} lessons
                   </span>
                 </button>
 
-                {/* -------- CONTENT -------- */}
                 {isOpen && (
                   <div className="accordion-content">
-                    {cases
-                      .filter(
-                        (c) =>
-                          c.category &&
-                          c.category.toLowerCase() ===
-                            cat.name.toLowerCase()
-                      )
-                      .map((c, idx) => (
+                    {filteredCases.length > 0 ? (
+                      filteredCases.map((c, idx) => (
                         <div
                           key={c._id}
                           className="lesson-card clickable"
@@ -79,15 +72,14 @@ export default function CaseStudies() {
                           <div className="lesson-number">
                             {idx + 1}
                           </div>
+
                           <div>
                             <h3>{c.title}</h3>
-                            <p>{c.subtitle}</p>
+                            {c.subtitle && <p>{c.subtitle}</p>}
                           </div>
                         </div>
-                      ))}
-
-                    {/* Show message if no cases */}
-                    {getLessonCount(cat.name) === 0 && (
+                      ))
+                    ) : (
                       <p className="no-lessons">
                         No case studies yet.
                       </p>

@@ -1,18 +1,18 @@
 /* ========== Page Layout ========== */
 .page {
   min-height: 100vh;
-  padding: 80px 8%;
+  padding: 100px 8%;
   display: flex;
   justify-content: center;
 }
 
-/* wrapper so button + card stay aligned */
+/* wrapper */
 .case-wrapper {
   width: 100%;
   max-width: 900px;
 }
 
-/* ========== Back Button (Outside Card) ========== */
+/* ========== Back Button ========== */
 .back-btn {
   margin-bottom: 25px;
   background: transparent;
@@ -28,22 +28,24 @@
 .back-btn:hover {
   background: #38bdf8;
   color: #0f172a;
+  transform: translateY(-2px);
 }
 
 /* ========== Case Container ========== */
 .page-inner {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  padding: 50px;
-  border-radius: 20px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  padding: 60px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* ========== Title ========== */
 .case-detail h1 {
   text-align: center;
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 44px;
+  margin-bottom: 12px;
   background: linear-gradient(90deg, #38bdf8, #f472b6);
   background-clip: text;
   -webkit-background-clip: text;
@@ -54,22 +56,89 @@
 .subtitle {
   text-align: center;
   color: #94a3b8;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 18px;
+  letter-spacing: 0.5px;
 }
 
 /* ========== Sections ========== */
 .section {
-  margin-bottom: 35px;
+  margin-bottom: 45px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.section:last-child {
+  border-bottom: none;
 }
 
 .section h2 {
   color: #facc15;
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .section p {
   color: #cbd5e1;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ========== Lists ========== */
+.section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.section li {
+  margin-bottom: 8px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* ========== Code Block ========== */
+.code-block {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  overflow-x: auto;
+  margin: 15px 0;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.code-block code {
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+}
+
+/* ========== Composite Block ========== */
+.composite-block p {
+  margin-bottom: 10px;
+}
+
+/* ========== Recap / Highlight Box ========== */
+.highlight-box {
+  background: rgba(56,189,248,0.1);
+  border-left: 4px solid #38bdf8;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* ========== Smooth Fade Animation ========== */
+.section {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
