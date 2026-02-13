@@ -1,0 +1,75 @@
+/* ========== Page Layout ========== */
+.page {
+  min-height: 100vh;
+  padding: 80px 8%;
+  display: flex;
+  justify-content: center;
+}
+
+/* wrapper so button + card stay aligned */
+.case-wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ========== Back Button (Outside Card) ========== */
+.back-btn {
+  margin-bottom: 25px;
+  background: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* ========== Case Container ========== */
+.page-inner {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* ========== Title ========== */
+.case-detail h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== Subtitle ========== */
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* ========== Sections ========== */
+.section {
+  margin-bottom: 35px;
+}
+
+.section h2 {
+  color: #facc15;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}

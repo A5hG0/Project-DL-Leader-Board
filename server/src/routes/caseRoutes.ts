@@ -1,12 +1,31 @@
-// routes/cases.ts
-import { Router, Request, Response } from "express";
+import express from "express";
 import Case from "../models/casestudy";
 
-const router = Router();
+const router = express.Router();
 
-router.get("/", async (_req: Request, res: Response) => {
-  const cases = await Case.find().sort({ createdAt: -1 });
-  res.json(cases);
+/* ---------------- GET ALL CASES ---------------- */
+router.get("/", async (req, res) => {
+  try {
+    const cases = await Case.find();
+    res.json(cases);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching cases" });
+  }
+});
+
+/* ---------------- GET SINGLE CASE ---------------- */
+router.get("/:id", async (req, res) => {
+  try {
+    const caseStudy = await Case.findById(req.params.id);
+
+    if (!caseStudy) {
+      return res.status(404).json({ message: "Case not found" });
+    }
+
+    res.json(caseStudy);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching case" });
+  }
 });
 
 export default router;

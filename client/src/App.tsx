@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-// import CaseStudies from "./pages/CaseStudies";
 import Leaderboard from "./pages/Leaderboard";
-import AdminAddCase from "./pages/AdminAddCase";
 import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetails from "./pages/CaseStudyDetails";
 
 function App() {
   return (
@@ -13,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cases" element={<CaseStudies />} />
+        <Route path="/case/:id" element={<CaseStudyDetails />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/add" element={<AdminAddCase />} />
       </Routes>
     </BrowserRouter>
   );
