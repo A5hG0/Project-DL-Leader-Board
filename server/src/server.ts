@@ -10,7 +10,13 @@ import userRoutes from "./routes/userRoutes";
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://deep-learning-tab.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 app.use("/cases", caseRoutes);
