@@ -16,4 +16,4 @@ app.use(express.json());
 app.use("/cases", caseRoutes);
 app.use("/users", userRoutes);
 
-app.listen(5000, () => console.log("🚀 Server running on 5000"));
+app.listen(process.env.PORT, () => console.log("🚀 Server running"));
