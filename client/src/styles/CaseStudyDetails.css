@@ -1,92 +1,106 @@
-/* ========== Page Layout ========== */
+/* ========== PAGE LAYOUT ========== */
+
 .page {
   min-height: 100vh;
   padding: 100px 8%;
   display: flex;
   justify-content: center;
   background: transparent;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
 }
 
 /* wrapper */
 .case-wrapper {
   width: 100%;
-  max-width: 900px;
+  max-width: 820px;   /* same width as accordion page */
 }
 
-/* ========== Back Button ========== */
+/* ========== BACK BUTTON ========== */
+
 .back-btn {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   background: transparent;
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.5);
   padding: 8px 18px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .back-btn:hover {
-  background: #38bdf8;
-  color: #0f172a;
+  background: rgba(168, 85, 247, 0.15);
   transform: translateY(-2px);
 }
 
-/* ========== Case Container ========== */
+/* ========== MAIN CONTENT CARD ========== */
+
 .page-inner {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.25);
   backdrop-filter: blur(14px);
-  padding: 60px;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
 }
 
-/* ========== Title ========== */
+/* ========== TITLE ========== */
+
 .case-detail h1 {
   text-align: center;
-  font-size: 44px;
-  margin-bottom: 12px;
-  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(90deg, #c084fc, #a855f7, #7c3aed);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ========== Subtitle ========== */
+/* ========== SUBTITLE ========== */
+
 .subtitle {
   text-align: center;
   color: #94a3b8;
-  margin-bottom: 50px;
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  margin-bottom: 45px;
+  font-size: 16px;
+  letter-spacing: 0.4px;
 }
 
-/* ========== Sections ========== */
+/* ========== SECTIONS ========== */
+
 .section {
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  animation: fadeInUp 0.4s ease;
 }
 
 .section:last-child {
   border-bottom: none;
 }
 
+/* Section headings */
 .section h2 {
-  color: #facc15;
-  font-size: 24px;
-  margin-bottom: 15px;
+  color: #e9d5ff;
+  font-size: 22px;
+  margin-bottom: 14px;
   font-weight: 600;
 }
 
+/* Section paragraph */
 .section p {
   color: #cbd5e1;
-  line-height: 1.8;
-  font-size: 16px;
+  line-height: 1.7;
+  font-size: 15px;
 }
 
-/* ========== Lists ========== */
+/* ========== LISTS ========== */
+
 .section ul {
   padding-left: 20px;
   margin-top: 10px;
@@ -96,50 +110,79 @@
   margin-bottom: 8px;
   color: #cbd5e1;
   line-height: 1.6;
+  font-size: 15px;
 }
 
-/* ========== Code Block ========== */
+/* ========== CODE BLOCK ========== */
+
 .code-block {
-  background: #0f172a;
+  background: rgba(15, 23, 42, 0.95);
   color: #f8fafc;
   padding: 18px;
-  border-radius: 14px;
+  border-radius: 12px;
   font-size: 14px;
   overflow-x: auto;
-  margin: 15px 0;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin: 18px 0;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.15);
 }
+
 .code-block code {
-  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
 }
 
-/* ========== Composite Block ========== */
+/* ========== COMPOSITE BLOCK ========== */
+
 .composite-block p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* ========== Recap / Highlight Box ========== */
+/* ========== HIGHLIGHT BOX ========== */
+
 .highlight-box {
-  background: rgba(56,189,248,0.1);
-  border-left: 4px solid #38bdf8;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-top: 15px;
+  background: rgba(168, 85, 247, 0.12);
+  border-left: 4px solid #a855f7;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-top: 18px;
+  color: #e9d5ff;
+  font-size: 15px;
 }
 
-/* ========== Smooth Fade Animation ========== */
-.section {
-  animation: fadeInUp 0.5s ease;
-}
+/* ========== ANIMATION ========== */
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 80px 6%;
+  }
+
+  .page-inner {
+    padding: 30px 22px;
+  }
+
+  .case-detail h1 {
+    font-size: 28px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .section p,
+  .section li {
+    font-size: 14px;
   }
 }
