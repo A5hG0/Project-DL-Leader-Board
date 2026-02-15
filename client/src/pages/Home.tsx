@@ -14,6 +14,9 @@ export default function Home() {
   return (
     <div className="home">
 
+      <div className="stars"></div>
+      <div className="stars2"></div>
+
       {/* Hero Section */}
       <section className="hero">
         <h1>TAB Deep Learning</h1>

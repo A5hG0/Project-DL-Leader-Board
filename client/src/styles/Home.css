@@ -1,19 +1,85 @@
+/* 🌌 Moving Starfield Background */
+
+body {
+  background: radial-gradient(circle at 20% 30%, #2e1065, #0b0615 60%);
+  overflow-x: hidden;
+}
+
+/* 🌌 RANDOM FLOATING STARS */
+
+.stars,
+.stars2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Small scattered stars */
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow:
+    10vw 20vh #c084fc,
+    25vw 70vh #a855f7,
+    40vw 35vh #e879f9,
+    55vw 80vh #c084fc,
+    70vw 15vh #a855f7,
+    85vw 60vh #e879f9,
+    15vw 50vh #c084fc,
+    60vw 40vh #a855f7;
+  animation: drift 100s linear infinite;
+}
+
+/* Slightly bigger slower stars */
+.stars2::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow:
+    20vw 30vh #a855f7,
+    50vw 10vh #c084fc,
+    75vw 45vh #e879f9,
+    90vw 75vh #a855f7;
+  animation: drift 120s linear infinite;
+}
+
+/* Smooth diagonal drift */
+@keyframes drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -200px);
+  }
+}
+
 /* ========== Base ========== */
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #0b0615; /* Deep dark purple */
+  color: #e9d5ff; /* Light lavender text */
   line-height: 1.6;
   letter-spacing: 0.3px;
 }
 
 ::selection {
-  color: #0f172a;
-  background: #38bdf8;
+  color: #0b0615;
+  background: #a855f7; /* Neon violet */
 }
 
 .home {
+  position: relative;
+  z-index: 1;
   padding: 80px 8%;
   max-width: 1300px;
   margin: auto;
@@ -29,14 +95,14 @@ body {
   font-size: 56px;
   font-weight: 700;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  background: linear-gradient(90deg, #a855f7, #e879f9, #7c3aed);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  color: #94a3b8;
+  color: #c4b5fd; /* Soft purple */
   font-size: 20px;
   max-width: 750px;
   margin: 0 auto;
@@ -47,7 +113,7 @@ body {
   font-size: 36px;
   margin-bottom: 40px;
   font-weight: 600;
-  color: #facc15;
+  color: #d8b4fe; /* Light neon purple */
   text-align: center;
 }
 
@@ -60,9 +126,9 @@ body {
 
 /* ========== Card Design ========== */
 .case-card {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
+  background: rgba(76, 29, 149, 0.25); /* Translucent purple */
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  backdrop-filter: blur(14px);
   padding: 28px;
   border-radius: 16px;
   transition: all 0.35s ease;
@@ -71,12 +137,12 @@ body {
 
 .case-card:hover {
   transform: translateY(-8px);
-  border-color: #38bdf8;
-  box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+  border-color: #c084fc;
+  box-shadow: 0 10px 35px rgba(168, 85, 247, 0.4);
 }
 
 .case-card h3 {
-  color: #38bdf8;
+  color: #c084fc; /* Bright neon lavender */
   margin-bottom: 16px;
   font-size: 22px;
   font-weight: 600;
@@ -87,8 +153,8 @@ body {
   display: inline-block;
   margin-top: 12px;
   text-decoration: none;
-  background: #38bdf8;
-  color: #0f172a;
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  color: #f3e8ff;
   padding: 10px 18px;
   border-radius: 8px;
   font-weight: 600;
@@ -96,7 +162,7 @@ body {
 }
 
 .btn:hover {
-  background: #0ea5e9;
+  background: linear-gradient(90deg, #c084fc, #8b5cf6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.3);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
 }

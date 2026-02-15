@@ -4,10 +4,12 @@ import Home from "./pages/Home";
 import Leaderboard from "./pages/Leaderboard";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetails from "./pages/CaseStudyDetails";
+import "./styles/starfield.css";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* <div className="starfield"></div> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

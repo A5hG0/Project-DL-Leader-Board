@@ -1,0 +1,47 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -9999;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Layer 1 */
+.starfield::before,
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: -200%;
+  background-repeat: repeat;
+}
+
+/* Small fast stars */
+.starfield::before {
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #c084fc 100%, transparent),
+    radial-gradient(2px 2px at 30% 80%, #a855f7 100%, transparent),
+    radial-gradient(2px 2px at 60% 40%, #e879f9 100%, transparent),
+    radial-gradient(2px 2px at 90% 60%, #c084fc 100%, transparent);
+  background-size: 800px 800px;
+  animation: drift 150s linear infinite;
+}
+
+/* Bigger slower stars */
+.starfield::after {
+  background-image:
+    radial-gradient(3px 3px at 25% 35%, #a855f7 100%, transparent),
+    radial-gradient(3px 3px at 75% 70%, #c084fc 100%, transparent);
+  background-size: 1200px 1200px;
+  animation: drift 250s linear infinite;
+}
+
+/* Infinite smooth movement */
+@keyframes drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-1000px, -1000px);
+  }
+}

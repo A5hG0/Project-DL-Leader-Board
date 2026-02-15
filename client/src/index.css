@@ -1,10 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+/* Ensure React app sits above starfield */
+#root {
+  position: relative;
+  z-index: 1;
 }
 
+/* Optional base setup */
 body {
-  background: #f5f5f5;
+  margin: 0;
+  background: #0b0615;
 }

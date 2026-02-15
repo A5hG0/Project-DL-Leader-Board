@@ -2,7 +2,7 @@
 .case-page {
   min-height: 100vh;
   padding: 80px 8%;
-  background: #0f172a;
+  background: transparent;
   color: #e2e8f0;
 }
 
@@ -146,7 +146,9 @@
 }
 
 /* ========== LESSON ITEM ========== */
+/* ========== LESSON ITEM ========== */
 .lesson-card {
+  position: relative;
   display: flex;
   gap: 18px;
   padding: 18px 20px;
@@ -155,33 +157,43 @@
   background: rgba(30, 41, 59, 0.6);
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.05);
+
+  transition: all 0.35s ease;
 }
 
-.lesson-number {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #22c55e;
-  color: #0f172a;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
+/* subtle neon strip */
+.lesson-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  border-radius: 14px 0 0 14px;
+  background: #22d3ee;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.lesson-card h3 {
-  margin: 0 0 4px 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #e2e8f0;
+/* HOVER EFFECT */
+.lesson-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(30, 41, 59, 0.85);
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.25);
+  border: 1px solid rgba(34, 211, 238, 0.4);
 }
 
-.lesson-card p {
-  margin: 0;
-  font-size: 14px;
-  color: #94a3b8;
+.lesson-card:hover::before {
+  opacity: 1;
+}
+
+/* make text slightly brighter on hover */
+.lesson-card:hover h3 {
+  color: #ffffff;
+}
+
+.lesson-card:hover p {
+  color: #cbd5e1;
 }
 
 /* ========== RESPONSIVE ========== */
