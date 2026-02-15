@@ -1,212 +1,237 @@
-/* ========== PAGE (match Home) ========== */
+/* ========== PAGE ========== */
+
 .case-page {
   min-height: 100vh;
   padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: transparent;
   color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Inner width controller (no box) */
 .case-page-inner {
-  max-width: 1100px;
-  margin: auto;
+  width: 100%;
+  max-width: 820px;
 }
 
 /* ========== TITLE ========== */
+
 .page-title {
   text-align: center;
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 70px;
-  margin-right: 2px;
-  background: linear-gradient(90deg, #38bdf8, #f472b6);
+  margin-bottom: 60px;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(90deg, #c084fc, #a855f7, #7c3aed);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ========== ACCORDION (CENTERED) ========== */
+/* ========== ACCORDION ========== */
+
 .accordion {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  max-width: 900px;
-  margin: auto;
+  gap: 20px;
 }
 
 /* ========== HEADER CARD ========== */
+
 .accordion-header {
-  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(30, 41, 59, 0.65);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 16px;
 
-  padding: 28px 32px;
+  padding: 22px 26px;
   cursor: pointer;
-  transition: all 0.35s ease;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* neon left strip */
-.accordion-header::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 6px;
-  border-radius: 18px 0 0 18px;
+.accordion-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
 }
 
-/* left content */
+/* Left content */
 .accordion-header .left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .accordion-header .icon {
-  font-size: 26px;
+  font-size: 24px;
 }
 
+/* Header title text */
 .accordion-header h2 {
   margin: 0;
   font-size: 22px;
   font-weight: 600;
-  color: #e2e8f0;
+  letter-spacing: 0.4px;
+  color: #f1f5f9;
 }
 
-/* lesson pill */
+/* Lesson count pill */
 .pill {
-  background: rgba(255,255,255,0.12);
-  color: #e2e8f0;
-  padding: 6px 14px;
+  background: rgba(168, 85, 247, 0.25);
+  color: #e9d5ff;
+  padding: 6px 16px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
-}
-
-/* hover glow */
-.accordion-header:hover {
-  transform: translateY(-6px);
-}
-
-/* ========== NEON COLOR VARIANTS ========== */
-.accordion-header.blue::before {
-  background: #38bdf8;
-}
-.accordion-header.blue:hover {
-  box-shadow: 0 12px 35px rgba(56,189,248,0.25);
-}
-
-.accordion-header.pink::before {
-  background: #f472b6;
-}
-.accordion-header.pink:hover {
-  box-shadow: 0 12px 35px rgba(244,114,182,0.25);
-}
-
-.accordion-header.cyan::before {
-  background: #22d3ee;
-}
-.accordion-header.cyan:hover {
-  box-shadow: 0 12px 35px rgba(34,211,238,0.25);
-}
-
-.accordion-header.green::before {
-  background: #4ade80;
-}
-.accordion-header.green:hover {
-  box-shadow: 0 12px 35px rgba(74,222,128,0.25);
-}
-
-.accordion-header.purple::before {
-  background: #a78bfa;
-}
-.accordion-header.purple:hover {
-  box-shadow: 0 12px 35px rgba(167,139,250,0.25);
+  letter-spacing: 0.3px;
 }
 
 /* ========== EXPANDED CONTENT ========== */
+
 .accordion-content {
-  margin-top: 18px;
-  padding: 28px;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 8px;
+  padding: 22px 26px;
 
   background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
   gap: 18px;
+
+  animation: fadeIn 0.2s ease;
 }
 
-/* ========== LESSON ITEM ========== */
-/* ========== LESSON ITEM ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== LESSON CARD ========== */
+
 .lesson-card {
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
   display: flex;
+  flex-direction: row;   /* KEY CHANGE */
+  align-items: flex-start;
   gap: 18px;
-  padding: 18px 20px;
+
+  padding: 18px 22px;
+  min-height: 64px;
+
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 12px;
+
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.12);
+
   cursor: pointer;
-
-  background: rgba(30, 41, 59, 0.6);
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.05);
-
-  transition: all 0.35s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* subtle neon strip */
+
+/* Monotone purple strip */
 .lesson-card::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
+  top: 18%;
+  height: 64%;
   width: 4px;
-  border-radius: 14px 0 0 14px;
-  background: #22d3ee;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border-radius: 4px;
+
+  background: #a855f7;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
-/* HOVER EFFECT */
+/* Lesson title */
+.lesson-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #e9d5ff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Lesson description */
+.lesson-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Hover effect */
 .lesson-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  background: rgba(30, 41, 59, 0.85);
-  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.25);
-  border: 1px solid rgba(34, 211, 238, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(168, 85, 247, 0.3);
 }
 
-.lesson-card:hover::before {
-  opacity: 1;
-}
-
-/* make text slightly brighter on hover */
 .lesson-card:hover h3 {
-  color: #ffffff;
+  color: #f3e8ff;
 }
 
 .lesson-card:hover p {
-  color: #cbd5e1;
+  color: #e9d5ff;
 }
 
 /* ========== RESPONSIVE ========== */
+
 @media (max-width: 768px) {
   .page-title {
-    font-size: 42px;
-  }
-
-  .accordion {
-    max-width: 100%;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #a855f7, #e879f9, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
   }
 
   .accordion-header {
-    padding: 22px;
+    padding: 16px 18px;
+  }
+
+  .accordion-content {
+    padding: 16px 18px;
+  }
+
+  .lesson-card {
+    padding: 14px 16px 14px 22px;
+  }
+
+  .lesson-card::before {
+    width: 3px;
+  }
+
+  .accordion-header h2 {
+    font-size: 18px;
+  }
+
+  .lesson-card h3 {
+    font-size: 15px;
+  }
+
+  .lesson-card p {
+    font-size: 13px;
   }
 }
