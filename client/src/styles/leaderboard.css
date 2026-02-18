@@ -81,3 +81,9 @@
   font-weight: 700;
   color: #e879f9;
 }
+.lb-loading {
+  padding: 40px;
+  font-size: 18px;
+  opacity: 0.8;
+  text-align: center;
+}
