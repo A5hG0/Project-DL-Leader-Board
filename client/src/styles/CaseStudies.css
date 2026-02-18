@@ -122,6 +122,74 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== Submit Section ===== */
+
+.submit-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+  gap: 30px;
+}
+
+.submit-left {
+  flex: 1;
+}
+
+.submit-left h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.submit-left p {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.4);
+}
+
+.submit-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-gif {
+  max-width: 250px;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .submit-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .submit-right {
+    margin-top: 20px;
+  }
+}
+
+
 /* ========== LESSON CARD ========== */
 
 .lesson-card {

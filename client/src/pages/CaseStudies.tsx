@@ -29,6 +29,33 @@ export default function CaseStudies() {
       <div className="case-page-inner">
         <h1 className="page-title">Case Studies</h1>
 
+        {/* ===== Submit Section ===== */}
+        <div className="submit-section">
+          <div className="submit-left">
+            <h2>Want to submit your solution?</h2>
+            <p>
+              Complete the case study and submit your work through the form.
+            </p>
+
+            <a
+              href="https://forms.gle/xEqjJn1KwwTyB7ey8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="submit-btn"
+            >
+              🚀 Submit Case Study
+            </a>
+          </div>
+
+          <div className="submit-right">
+            <img
+              src="https://media.tenor.com/itjFesV8_RUAAAAi/soulja-boy-pepe.gif"
+              alt="Anime coding"
+              className="submit-gif"
+            />
+          </div>
+        </div>
+
         <div className="accordion">
           {categories.map((cat) => {
             const isOpen = expandedCategory === cat.name;
