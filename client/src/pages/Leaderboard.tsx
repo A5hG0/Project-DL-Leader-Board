@@ -73,7 +73,7 @@ export default function Leaderboard() {
                   <td>{u.name}</td>
                   <td>{u.totalPoints}</td>
                   <td>{u.casesCompleted}</td>
-                  <td>{Number(u.completionPercent) * 100}</td>
+                  <td>{(Number(u.completionPercent) * 100).toFixed(2)}</td>
                   <td>{u.streak} 🔥</td>
                   <td>{u.badge || "-"}</td>
                 </tr>
